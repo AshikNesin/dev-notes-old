@@ -1,5 +1,26 @@
+
+
 ## Variables
 
+### Primitives Type
+
+We can't assign value or property to a premitive value.
+
+- String
+- Number
+- Boolean
+- Undefined
+- Null
+
+### Reference Type
+
+Everything other than those premitives values are Objects.
+
+- Object
+- Array
+- Function
+- Date
+- RegExp
 
 
 ### Naming
@@ -39,6 +60,70 @@ A string of text must be surrounded by either double or single quotes.
     alert('This text is surrounded by single quotes');
 ```
 
+### Boolean 
+
+Boolean operators are used to test the **trueness or falseness** of a value. Every value in JavaScript can be evaluated as a Boolean. Some values are considered false and others are considered true; you’ll see how this is important later on in this chapter. 
+
+For now, know that these values are considered false:
+* false
+* null
+* undefined
+* "" (an empty string)
+* 0
+* NaN (what you get when you try to add, subtract, etc. a number and another non-number value)
+
+Every other value are considered **true**
+
+#### Logical NOT ( ! )
+
+The logical NOT operator converts the given value to the opposite Boolean value.
+
+#### Logical AND ( && )
+
+It only returns true if both sides of the operator are true. 
+
+#### Logical OR ( || )
+
+It returns true as long as just one of the values are true.
+
+### Null and Undefined
+
+When you try to get a value that doesn’t exist (like a variable with no value), you’ll get **undefined** back.
+
+
+
+### Object
+
+Think of an object as a wrapper for a bunch of primitive or reference values. Here’s an example:
+
+Inside the object, we have a list of key-value pairs.Each pair, except for the last one, ends with a comma.
+
+And you can get the value in it in two ways.
+
+Name of the identifier and its value
+
+```js
+	
+	/* old way
+	var person = new Object();
+	person.firstName = "Ashik";
+	person.lastName = "Nesin";
+	person.sayHi = function(){};
+	*/
+
+	// Object Literal Notation
+
+	var person = {
+		firstName: 'Ashik',
+		lastName: 'Nesin',
+		sayHi: function(){}
+	};
+
+    var obj = { name : "Joe", age : 10 };
+    alert( obj.name ); // "Joe"
+    alert( obj["age"] ) ; // 10
+```
+
 
 ### Array 
 
@@ -55,19 +140,7 @@ An array is delimited by brackets and each value is separated by a comma. You ar
 Array item indices are **zero-based**, which means the  rst item is 0, the second is 1, and so on.
 
 
-### Object
 
-Think of an object as a wrapper for a bunch of primitive or reference values. Here’s an example:
-
-Inside the object, we have a list of key-value pairs.Each pair, except for the last one, ends with a comma.
-
-And you can get the value in it in two ways.
-
-```
-    var obj = { name : "Joe", age : 10 };
-    alert( obj.name ); // "Joe"
-    alert( obj["age"] ) ; // 10
-```
 
 ### Date Object
 
@@ -93,9 +166,7 @@ Or, you can pass a list of parameters, corresponding to the following list: year
 
 Month number is **zero-based**. This means that to get January, you use the number 0 and to get December, you use 11.
 
-### Null and Undefined
 
-When you try to get a value that doesn’t exist (like a variable with no value), you’ll get **undefined** back.
 
 
 ### Comments
@@ -203,31 +274,6 @@ We’ve looked at assigning with the = operator; but there are a few others that
 
 These assignment operators are used to perform an operation on a value already in a variable and re-assign the new value to the variable.
 
-### Boolean 
-
-Boolean operators are used to test the **trueness or falseness** of a value. Every value in JavaScript can be evaluated as a Boolean. Some values are considered false and others are considered true; you’ll see how this is important later on in this chapter. 
-
-For now, know that these values are considered false:
-* false
-* null
-* undefined
-* "" (an empty string)
-* 0
-* NaN (what you get when you try to add, subtract, etc. a number and another non-number value)
-
-Every other value are considered **true**
-
-#### Logical NOT ( ! )
-
-The logical NOT operator converts the given value to the opposite Boolean value.
-
-#### Logical AND ( && )
-
-It only returns true if both sides of the operator are true. 
-
-#### Logical OR ( || )
-
-It returns true as long as just one of the values are true.
 
 ### Conditional Statements 
 
