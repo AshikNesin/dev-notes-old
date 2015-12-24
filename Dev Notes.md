@@ -9,9 +9,7 @@ display:block
 
 ### z-index
 
-z-index property specifies the stack order of an element.
 
-An element with great stack order is always infront of an element with lower stack order.
 
 **Note** 
 
