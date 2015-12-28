@@ -32,20 +32,19 @@ HTML5 provides us with lots of semantic elements aimed to describe precisely the
 </main>
 ```
 
-Make sure you understand the semantics of the elements you're using. It's worse to use a semantic
-element in a wrong way than staying neutral.
+Make sure you understand the semantics of the elements you're using. It's worse to use a semantic element in a wrong way than staying neutral.
 
 ```html
 <!-- bad -->
 <h1>
   <figure>
-    <img alt=Company src=logo.png>
+    <img alt="Company" src="logo.png">
   </figure>
 </h1>
 
 <!-- good -->
 <h1>
-  <img alt=Company src=logo.png>
+  <img alt="Company" src="logo.png">
 </h1>
 ```
 
@@ -56,42 +55,40 @@ Keep your code terse. Forget about your old XHTML habits.
 ```html
 <!-- bad -->
 <!doctype html>
-<html lang=en>
+<html lang="en">
   <head>
-    <meta http-equiv=Content-Type content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Contact</title>
-    <link rel=stylesheet href=style.css type=text/css />
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
     <h1>Contact me</h1>
     <label>
       Email address:
-      <input type=email placeholder=you@email.com required=required />
+      <input type="email" placeholder="you@email.com" required="required" />
     </label>
-    <script src=main.js type=text/javascript></script>
+    <script src="main.js" type="text/javascript"></script>
   </body>
 </html>
 
 <!-- good -->
 <!doctype html>
-<html lang=en>
-  <meta charset=utf-8>
+<html lang="en">
+  <meta charset="utf-8">
   <title>Contact</title>
-  <link rel=stylesheet href=style.css>
-
+  <link rel="stylesheet" href="style.css">
   <h1>Contact me</h1>
   <label>
     Email address:
-    <input type=email placeholder=you@email.com required>
+    <input type="email" placeholder="you@email.com" required>
   </label>
-  <script src=main.js></script>
+  <script src="main.js"></script>
 </html>
 ```
 
 ### Accessibility
 
-Accessibility shouldn't be an afterthought. You don't have to be a WCAG expert to improve your
-website, you can start immediately by fixing the little things that make a huge difference, such as:
+Accessibility shouldn't be an afterthought. You don't have to be a WCAG expert to improve your website, you can start immediately by fixing the little things that make a huge difference, such as:
 
 * learning to use the `alt` attribute properly
 * making sure your links and buttons are marked as such (no `<div class=button>` atrocities)
@@ -108,9 +105,7 @@ website, you can start immediately by fixing the little things that make a huge 
 
 ### Language
 
-While defining the language and character encoding is optional, it's recommended to always declare
-both at document level, even if they're specified in your HTTP headers. Favor UTF-8 over any other
-character encoding.
+While defining the language and character encoding is optional, it's recommended to always declare both at document level, even if they're specified in your HTTP headers. Favor UTF-8 over any other character encoding.
 
 ```html
 <!-- bad -->
@@ -127,26 +122,24 @@ character encoding.
 
 ### Performance
 
-Unless there's a valid reason for loading your scripts before your content, don't block the
-rendering of your page. If your style sheet is heavy, isolate the styles that are absolutely
-required initially and defer the loading of the secondary declarations in a separate style sheet.
-Two HTTP requests is significantly slower than one, but the perception of speed is the most
-important factor.
+Unless there's a valid reason for loading your scripts before your content, don't block the rendering of your page. If your style sheet is heavy, isolate the styles that are absolutely required initially and defer the loading of the secondary declarations in a separate style sheet.
+
+Two HTTP requests is significantly slower than one, but the perception of speed is the most important factor.
 
 ```html
 <!-- bad -->
 <!doctype html>
-<meta charset=utf-8>
-<script src=analytics.js></script>
+<meta charset="utf-8">
+<script src="analytics.js"></script>
 <title>Hello, world.</title>
 <p>...</p>
 
 <!-- good -->
 <!doctype html>
-<meta charset=utf-8>
+<meta charset="utf-8">
 <title>Hello, world.</title>
 <p>...</p>
-<script src=analytics.js></script>
+<script src="analytics.js"></script>
 ```
 
 ## CSS
@@ -365,8 +358,7 @@ Prefer English over math.
 
 ### Vendor prefixes
 
-Kill obsolete vendor prefixes aggressively. If you need to use them, insert them before the
-standard property.
+Kill obsolete vendor prefixes aggressively. If you need to use them, insert them before the standard property.
 
 ```css
 /* bad */
@@ -414,8 +406,7 @@ div:hover {
 
 ### Units
 
-Use unitless values when you can. Favor `rem` if you use relative units. Prefer seconds over
-milliseconds.
+Use unitless values when you can. Favor `rem` if you use relative units. Prefer seconds over milliseconds.
 
 ```css
 /* bad */
@@ -494,9 +485,7 @@ div {
 
 ### Performance
 
-Favor readability, correctness and expressiveness over performance. JavaScript will basically never
-be your performance bottleneck. Optimize things like image compression, network access and DOM
-reflows instead. If you remember just one guideline from this document, choose this one.
+Favor readability, correctness and expressiveness over performance. JavaScript will basically never be your performance bottleneck. Optimize things like image compression, network access and DOM reflows instead. If you remember just one guideline from this document, choose this one.
 
 ```javascript
 // bad (albeit way faster)
